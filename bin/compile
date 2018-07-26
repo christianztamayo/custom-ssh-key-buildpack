@@ -26,6 +26,7 @@ if [[ -f $ENV_DIR/CUSTOM_SSH_KEY && -f $ENV_DIR/CUSTOM_SSH_KEY_HOSTS ]]; then
   IFS=',' ;for element in `cat $ENV_DIR/CUSTOM_SSH_KEY_HOSTS`;
   do
     echo -e "Host $element\n"\
+            "  Hostname $element\n"\
             "  IdentityFile ~/.ssh/custom_key\n"\
             "  IdentitiesOnly yes\n"\
             "  UserKnownHostsFile=/dev/null\n"\
@@ -34,7 +35,4 @@ if [[ -f $ENV_DIR/CUSTOM_SSH_KEY && -f $ENV_DIR/CUSTOM_SSH_KEY_HOSTS ]]; then
   done
 
   echo "-----> Successfully added custom SSH key"
-  
-  cat ~/.ssh/config
-  cat ~/.ssh/custom_key
 fi

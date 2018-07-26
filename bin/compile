@@ -34,5 +34,7 @@ if [[ -f $ENV_DIR/CUSTOM_SSH_KEY && -f $ENV_DIR/CUSTOM_SSH_KEY_HOSTS ]]; then
   done
 
   echo "-----> Successfully added custom SSH key"
-
+  
+  cat ~/.ssh/config
+  cat ~/.ssh/custom_key
 fi
